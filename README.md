@@ -1,6 +1,21 @@
 # packpath
 Automatically upload Signal stickers from a given path and YAML configuration
 
+
+## Install it
+
+The package is available in PyPI, through `pip`:
+```sh
+  $ pip3 install packpath
+```
+
+But you can also simply checkout this repository and run it as a module:
+```sh
+  $ git clone https://github.com/diegoe/packpath.git
+  $ cd packpath
+  $ python3 -m packpath (plus arguments, see below)
+```
+
 ## How it works
 
 `packpath` reads a path and loads a `config.yaml` file from it to automatically
@@ -9,12 +24,18 @@ fill a `signalstickers-client` client, and submit stickers.
 It subclasses `signalstickers_client.models.LocalStickerPack` to add a
 `load_path()` method.
 
-The module is meant for command line invocation, but can easily be used
-in code:
+You need to provide your username and password, as well as the path to a
+sticker directory containing a `config.yaml` file. See below for details
+on both, or run `packpath --help`:
 
 ```sh
-  $ python3 -m packpath [path] --user [uuid_id] --password [password]
+  $ packpath --user [uuid_id] --password [password] [path_to_sticker_dir]
+
+  # Most of this README and its instructions are available in the
+  # command's help:
+  $ packpath --help
 ```
+
 
 ## YAML format
 
@@ -39,6 +60,7 @@ list of filenames to use on your `config.yaml`:
   $ ls -1 >> config.yaml
 ```
 
+
 ## Signal credentials
 
 From https://github.com/signalstickers/signalstickers-client#uploading-a-pack:
@@ -50,12 +72,14 @@ From https://github.com/signalstickers/signalstickers-client#uploading-a-pack:
 
 The above is also available in `python3 -m packpath --help`.
 
+
 ## Credits
 
 This is a simple wrapper on top of the very handy
 [`signalstickers-client`](https://github.com/signalstickers/signalstickers-client).
 
 Go check it out.
+
 
 ## Disclaimer
 

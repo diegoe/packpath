@@ -4,7 +4,7 @@
 
 __author__ = "Diego Escalante Urrelo"
 __license__ = "AGPL-3.0-only"
-__version__ = "0.9.3"
+__version__ = "0.9.4"
 
 import os
 import yaml

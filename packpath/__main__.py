@@ -68,7 +68,16 @@ async def async_main():
     async with StickersClient(args.user, args.password) as client:
         pack_id, pack_key = await client.upload_pack(pp)
 
-    print(f"Pack uploaded!\n\nhttps://signal.art/addstickers/#pack_id={pack_id}&pack_key={pack_key}")
+    print(f"""
+Pack uploaded. You can install it by visiting:
+https://signal.art/addstickers/#pack_id={pack_id}&pack_key={pack_key}
+
+You can also preview your pack at signalstickers.com:
+https://signalstickers.com/pack/{pack_id}?key={pack_key}
+
+Note that visiting the above URL will (technically) make the pack ID and key visible to signalstickers.com server logs.
+This will NOT add your pack to signalstickers.com, see https://signalstickers.com/contribute for that.
+""")
 
 
 def main():

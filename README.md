@@ -1,3 +1,6 @@
+![Mosaic of custom Signal stickers with the Signal logo in the middle](https://github.com/diegoe/packpath/blob/main/packpath-cover.jpg?raw=true)
+
+
 # packpath
 Automatically upload Signal stickers from a given path and YAML configuration
 

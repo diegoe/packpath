@@ -4,7 +4,7 @@
 
 __author__ = "Diego Escalante Urrelo"
 __license__ = "AGPL-3.0-only"
-__version__ = "0.9.3"
+__version__ = "0.9.4"
 
 import os
 import yaml
@@ -50,6 +50,8 @@ class PackPath(LocalStickerPack):
                 stick.image_data = image_data.read()
                 self._addsticker(stick)
 
+        # Note that technically Signal does not require a cover, however
+        # we opinionatedly require that one is defined in config.yaml.
         cover_path = self.pp_path / self.pp_config["pack"]["cover"]
         with cover_path.open("rb") as image_data:
             cover = Sticker()

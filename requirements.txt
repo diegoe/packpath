@@ -1,7 +1,7 @@
 anyio==2.2.0
 certifi==2020.12.5
 cffi==1.14.5
-cryptography==3.4.6
+cryptography==39.0.1
 h11==0.12.0
 httpcore==0.12.3
 httpx==0.16.1
